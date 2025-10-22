@@ -19,6 +19,20 @@
     <!--     <vm:MainWindowViewModel /> -->
     <!-- </Design.DataContext> -->
 
+    <Window.Styles>
+        <Style Selector="Button.trigger">
+            <Setter Property="Background" Value="Red" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Padding" Value="10" />
+        </Style>
+
+        <Style Selector="Button.trigger:pointerover /template/ ContentPresenter">
+            <Setter Property="Background" Value="DarkRed" />
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Padding" Value="10" />
+        </Style>
+    </Window.Styles>
+
     <Grid Margin="40">
         <StackPanel
             HorizontalAlignment="Center"
@@ -38,7 +52,7 @@
                 TextWrapping="Wrap" />
 
             <Border
-                Background="LightBlue"
+                Background="Blue"
                 CornerRadius="8"
                 Padding="20,15">
                 <TextBlock
@@ -49,24 +63,27 @@
 
             <StackPanel Spacing="15">
                 <Button
-                    Background="DarkRed"
+                    Classes="trigger"
                     Command="{Binding TriggerBsodCommand}"
-                    Content="🚨 Trigger BSOD Prank"
+                    Content="Trigger Prank"
                     FontSize="16"
                     FontWeight="Bold"
-                    Foreground="White"
                     Height="50"
                     HorizontalAlignment="Center"
+                    HorizontalContentAlignment="Center"
                     IsEnabled="{Binding !IsBsodActive}"
+                    VerticalContentAlignment="Center"
                     Width="200" />
 
                 <Button
                     Command="{Binding ResetPrankCommand}"
-                    Content="🔄 Reset Prank"
+                    Content="Reset Prank"
                     FontSize="14"
                     Height="40"
                     HorizontalAlignment="Center"
+                    HorizontalContentAlignment="Center"
                     IsEnabled="{Binding IsBsodActive}"
+                    VerticalContentAlignment="Center"
                     Width="200" />
             </StackPanel>
 
