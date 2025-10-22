@@ -1,0 +1,103 @@
+<Window
+    Background="Blue"
+    CanResize="False"
+    Title="System Error"
+    Topmost="True"
+    WindowState="FullScreen"
+    d:DesignHeight="800"
+    d:DesignWidth="600"
+    mc:Ignorable="d"
+    x:Class="BlueScreenofDeath.Views.BsodWindow"
+    x:DataType="vm:BsodViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:BlueScreenofDeath.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- <Design.DataContext> -->
+    <!--     <vm:BsodViewModel /> -->
+    <!-- </Design.DataContext> -->
+
+    <Window.Styles>
+        <Style Selector="TextBlock">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="16" />
+        </Style>
+    </Window.Styles>
+
+    <Grid IsVisible="{Binding IsVisible}">
+        <StackPanel
+            HorizontalAlignment="Center"
+            Spacing="20"
+            VerticalAlignment="Center">
+            <!--  Error Emoji  -->
+            <TextBlock
+                FontSize="120"
+                FontWeight="Bold"
+                HorizontalAlignment="Center"
+                Text=":(" />
+
+            <!--  Error Message  -->
+            <StackPanel Spacing="15">
+                <TextBlock FontSize="24" Text="Your PC ran into a problem and needs to restart. We're just" />
+                <TextBlock FontSize="24" Text="collecting some error info, and then we'll restart for you." />
+                <TextBlock
+                    FontSize="18"
+                    Margin="0,20,0,0"
+                    Text="{Binding AdditionalInfo}" />
+            </StackPanel>
+
+            <!--  Progress Section  -->
+            <StackPanel
+                HorizontalAlignment="Left"
+                Margin="0,40,0,0"
+                Spacing="15">
+                <TextBlock FontSize="20" Text="Collecting error information" />
+
+                <ProgressBar
+                    Background="#000080"
+                    BorderBrush="Gray"
+                    BorderThickness="1"
+                    CornerRadius="2"
+                    Height="25"
+                    Value="{Binding ProgressValue}"
+                    Width="500" />
+            </StackPanel>
+
+            <!--  Error Details  -->
+            <StackPanel Margin="0,60,0,0" Spacing="10">
+                <TextBlock Text="For more information about this issue and possible fixes, visit" />
+                <TextBlock Text="https://www.windows.com/stopcode" />
+                <StackPanel
+                    Margin="0,20,0,0"
+                    Orientation="Horizontal"
+                    Spacing="10">
+                    <TextBlock Text="Stop code:" />
+                    <TextBlock Text="{Binding ErrorMessage}" />
+                </StackPanel>
+            </StackPanel>
+
+            <!--  QR Code Placeholder  -->
+            <Border
+                BorderBrush="White"
+                BorderThickness="2"
+                Height="120"
+                HorizontalAlignment="Left"
+                Margin="0,40,0,0"
+                Width="120">
+                <Grid>
+                    <Rectangle Fill="White" Margin="10" />
+                    <TextBlock
+                        FontSize="18"
+                        Foreground="Blue"
+                        HorizontalAlignment="Center"
+                        Text="QR"
+                        VerticalAlignment="Center" />
+                </Grid>
+            </Border>
+        </StackPanel>
+    </Grid>
+
+
+</Window>

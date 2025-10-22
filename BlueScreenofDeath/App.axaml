@@ -1,0 +1,23 @@
+<Application
+    RequestedThemeVariant="Default"
+    x:Class="BlueScreenofDeath.App"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:converter="using:BlueScreenofDeath.Converters"
+    xmlns:local="using:BlueScreenofDeath"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--  "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options.  -->
+
+    <Application.Resources>
+        <FontFamily x:Key="Consolas">avares://BlueScreenofDeath/Assets/Consolas-Font#consolai</FontFamily>
+
+        <converter:ProgressConverter x:Key="ProgressConverter" />
+    </Application.Resources>
+
+    <Application.DataTemplates>
+        <local:ViewLocator />
+    </Application.DataTemplates>
+
+    <Application.Styles>
+        <FluentTheme />
+    </Application.Styles>
+</Application>

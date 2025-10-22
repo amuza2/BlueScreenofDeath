@@ -1,0 +1,89 @@
+<Window
+    Height="400"
+    Icon="/Assets/avalonia-logo.ico"
+    Title="Fake BSOD Simulator"
+    Width="500"
+    WindowStartupLocation="CenterScreen"
+    d:DesignHeight="400"
+    d:DesignWidth="500"
+    mc:Ignorable="d"
+    x:Class="BlueScreenofDeath.Views.MainWindow"
+    x:DataType="vm:MainWindowViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:BlueScreenofDeath.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- <Design.DataContext> -->
+    <!--     <vm:MainWindowViewModel /> -->
+    <!-- </Design.DataContext> -->
+
+    <Grid Margin="40">
+        <StackPanel
+            HorizontalAlignment="Center"
+            Spacing="25"
+            VerticalAlignment="Center">
+            <TextBlock
+                FontSize="28"
+                FontWeight="Bold"
+                HorizontalAlignment="Center"
+                Text="💀 Fake BSOD Simulator" />
+
+            <TextBlock
+                FontSize="14"
+                HorizontalAlignment="Center"
+                Opacity="0.7"
+                Text="Create realistic Blue Screen pranks for your friends!"
+                TextWrapping="Wrap" />
+
+            <Border
+                Background="LightBlue"
+                CornerRadius="8"
+                Padding="20,15">
+                <TextBlock
+                    FontWeight="SemiBold"
+                    HorizontalAlignment="Center"
+                    Text="{Binding StatusMessage}" />
+            </Border>
+
+            <StackPanel Spacing="15">
+                <Button
+                    Background="DarkRed"
+                    Command="{Binding TriggerBsodCommand}"
+                    Content="🚨 Trigger BSOD Prank"
+                    FontSize="16"
+                    FontWeight="Bold"
+                    Foreground="White"
+                    Height="50"
+                    HorizontalAlignment="Center"
+                    IsEnabled="{Binding !IsBsodActive}"
+                    Width="200" />
+
+                <Button
+                    Command="{Binding ResetPrankCommand}"
+                    Content="🔄 Reset Prank"
+                    FontSize="14"
+                    Height="40"
+                    HorizontalAlignment="Center"
+                    IsEnabled="{Binding IsBsodActive}"
+                    Width="200" />
+            </StackPanel>
+
+            <StackPanel Spacing="8">
+                <TextBlock
+                    FontSize="12"
+                    Foreground="Gray"
+                    HorizontalAlignment="Center"
+                    Text="🔑 Secret Exit: Ctrl + Shift + Q" />
+                <TextBlock
+                    FontSize="10"
+                    FontStyle="Italic"
+                    Foreground="Orange"
+                    HorizontalAlignment="Center"
+                    Text="⚠️ Use responsibly - don't scare people too much!" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+
+</Window>
