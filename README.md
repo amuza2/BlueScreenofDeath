@@ -2,8 +2,9 @@
 
 A realistic Blue Screen of Death simulator built with Avalonia UI for harmless pranks.
 
+![Avalonia](https://img.shields.io/badge/Avalonia-UI-blue)  ![MVVM](https://img.shields.io/badge/MVVM-Community_Toolkit-green) 
 ![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-blue)
-![.NET](https://img.shields.io/badge/.NET-6.0+-512BD4)
+![.NET](https://img.shields.io/badge/.NET-9.0+-512BD4)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ## Features
@@ -37,7 +38,10 @@ dotnet run
 
 ## Screenshots
 
-![BSOD Simulator](docs/preview.png)
+<img width="498" height="424" alt="image" src="https://github.com/user-attachments/assets/50e1a9d7-7eca-4bed-b7ae-41079ada41d2" />
+
+
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/cdd99f88-19d4-4c04-8c49-527667a26f0f" />
 
 ## Tech Stack
 
@@ -50,10 +54,9 @@ dotnet run
 
 ⚠️ **Use responsibly!** This is for harmless pranks only.
 
-- Get permission before pranking
 - Don't use on people with heart conditions
 - Always reveal it's a prank quickly
-- Practice exit shortcuts first
+- (important) Practice exit shortcuts first
 
 ## License
 
